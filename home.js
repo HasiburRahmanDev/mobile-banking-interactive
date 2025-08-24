@@ -17,6 +17,13 @@ function setInnerText(value) {
   availableBalanceElement.innerText = value;
 }
 
+function displayNone(id) {
+  document.getElementById(id).style.display = "none";
+}
+
+function displayBlock(id) {
+  document.getElementById(id).style.display = "block";
+}
 // add money feature
 document
   .getElementById("add-money-btn")
@@ -134,29 +141,30 @@ document.getElementById("logOut-btn").addEventListener("click", function () {
 //   toggling feature
 
 document.getElementById("add-btn").addEventListener("click", function () {
-  document.getElementById("cashout-parent").style.display = "none";
-  document.getElementById("transfer-parent").style.display = "none";
-  document.getElementById("bonus-parent").style.display = "none";
-  document.getElementById("add-money-parent").style.display = "block";
+  displayNone("cashout-parent");
+  displayNone("transfer-parent");
+  displayNone("bonus-parent");
+  displayBlock("add-money-parent");
 });
 
 document.getElementById("cashout-btn").addEventListener("click", function () {
-  document.getElementById("add-money-parent").style.display = "none";
-  document.getElementById("transfer-parent").style.display = "none";
-  document.getElementById("bonus-parent").style.display = "none";
-  document.getElementById("cashout-parent").style.display = "block";
+  displayNone("add-money-parent");
+  displayNone("transfer-parent");
+  displayNone("bonus-parent");
+  displayBlock("cashout-parent");
 });
 
 document.getElementById("transfer-btn").addEventListener("click", function () {
-  document.getElementById("add-money-parent").style.display = "none";
-  document.getElementById("cashout-parent").style.display = "none";
-  document.getElementById("bonus-parent").style.display = "none";
-  document.getElementById("transfer-parent").style.display = "block";
+  displayNone("add-money-parent");
+  displayNone("cashout-parent");
+  displayNone("bonus-parent");
+  displayBlock("transfer-parent");
 });
 
 document.getElementById("btn-bonus").addEventListener("click", function () {
-  document.getElementById("add-money-parent").style.display = "none";
-  document.getElementById("cashout-parent").style.display = "none";
-  document.getElementById("transfer-parent").style.display = "none";
-  document.getElementById("bonus-parent").style.display = "block";
+  // document.getElementById("add-money-parent").style.display = "none";
+  displayNone("add-money-parent");
+  displayNone("cashout-parent");
+  displayNone("transfer-parent");
+  displayBlock("bonus-parent");
 });
