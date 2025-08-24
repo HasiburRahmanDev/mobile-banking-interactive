@@ -126,6 +126,11 @@ document.getElementById("bonus-btn").addEventListener("click", function (e) {
   document.getElementById("bonus-coupon").value = "";
 });
 
+// LogOut feature
+
+document.getElementById("logOut-btn").addEventListener("click", function () {
+  window.location.href = "index.html";
+});
 //   toggling feature
 
 document.getElementById("add-btn").addEventListener("click", function () {

@@ -1,6 +1,6 @@
 document.getElementById("btn-login").addEventListener("click", function (e) {
   e.preventDefault();
-  const MobileNumber = 13032875673;
+  const MobileNumber = 12345678910;
   const pin = 1234;
 
   const mobileNumberValue = parseInt(
