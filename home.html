@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Mobile-banking</title>
   </head>
 
   <!-- Tailwind and DaisyUi  -->
@@ -72,12 +72,14 @@
           <h1 class="text-sm">Cashout</h1>
         </div>
         <div
+          id="transfer-btn"
           class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/money1.png" alt="" />
           <h1 class="text-sm">Transfer Money</h1>
         </div>
         <div
+          id="btn-bonus"
           class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/bonus1.png" alt="" />
@@ -216,6 +218,86 @@
               Withdraw Money
             </button>
           </div>
+        </div>
+      </form>
+
+      <!-- Transfer money  -->
+      <form id="transfer-parent" class="max-w-lg mx-auto" style="display: none">
+        <h1 class="my-4 font-bold">Transfer Money</h1>
+        <div class="bg-white p-5 rounded-3xl">
+          <div>
+            <br />
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >User Account Number</label
+            >
+            <br />
+            <input
+              id="user-number"
+              type="text"
+              placeholder="Enter 11 digit number"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Amount</label
+            >
+            <br />
+            <input
+              id="send-amount"
+              type="text"
+              placeholder="Enter Amount to transfer"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Pin Number</label
+            >
+            <br />
+            <input
+              id="transfer-pin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <button
+              id="send-btn"
+              class="btn p-2 text-xl text-white font-bold bg-[#0874F2] w-full rounded-3xl"
+            >
+              Send Now
+            </button>
+          </div>
+        </div>
+      </form>
+
+      <!-- Get Bonus  -->
+      <form id="bonus-parent" class="max-w-lg mx-auto" style="display: none">
+        <h1 class="my-4 font-bold">Get Bonus</h1>
+        <div class="bg-white p-5 rounded-3xl">
+          <div>
+            <br />
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Enter Bonus Coupon</label
+            >
+            <br />
+            <input
+              id="bonus-coupon"
+              type="text"
+              placeholder="Enter Your Coupon"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+        </div>
+        <div>
+          <button
+            id="bonus-btn"
+            class="btn p-2 text-xl text-white font-bold bg-[#0874F2] w-full rounded-3xl"
+          >
+            Get Bonus
+          </button>
         </div>
       </form>
     </div>
