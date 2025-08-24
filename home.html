@@ -5,7 +5,155 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
   </head>
-  <body>
-    <h1>I am home pag</h1>
+
+  <!-- Tailwind and DaisyUi  -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/daisyui@5"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- fontawesonme  -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+    integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <body class="bg-[#F4F5F7] h-[100vh]">
+    <nav
+      class="flex justify-between items-center max-w-lg mx-auto p-4 border-b-1 border-gray-200 bg-white"
+    >
+      <!-- left div  -->
+      <div class="left-div flex">
+        <img class="h-[45px]" src="assets/Group.png" alt="" />
+        <div>
+          <h1>$ <span class="font-bold">45000</span></h1>
+          <p>Available Balance</p>
+        </div>
+      </div>
+      <!-- Right div  -->
+      <div class="Right-div">
+        <button class="btn text-[#08080880] rounded-xl">
+          <i
+            class="text-black rotate-180 mr-2 fa-solid fa-arrow-right-from-bracket"
+          ></i
+          >Log Out
+        </button>
+      </div>
+    </nav>
+
+    <section class="bg-white max-w-lg mx-auto p-5 rounded-br-xl">
+      <div>
+        <h1 class="font-bold">🔥 Welcome to Payooo!</h1>
+        <p class="my-4">
+          Enjoy easy and convenient financial services with us. Cashout charge
+          is low and
+        </p>
+      </div>
+
+      <!-- card section  -->
+      <div class="card grid grid-cols-3 gap-3">
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <h1 class="text-sm">Add Money</h1>
+        </div>
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <h1 class="text-sm">Cashout</h1>
+        </div>
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/money1.png" alt="" />
+          <h1 class="text-sm">Transfer Money</h1>
+        </div>
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <h1 class="text-sm">Get Bonus</h1>
+        </div>
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <h1 class="text-sm">Pay Bill</h1>
+        </div>
+        <div
+          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+        >
+          <img src="assets/wallet1.png" alt="" />
+          <h1 class="text-sm">Transactions</h1>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add money  -->
+
+    <form class="max-w-lg mx-auto">
+      <h1 class="my-4 font-bold">Add Money</h1>
+      <!-- Select A Bank -->
+      <div class="bg-white p-5 rounded-3xl">
+        <div>
+          <h1 class="mb-3 text-xl text-[#080808b3] font-bold">Select A Bank</h1>
+          <select class="select w-full rounded-3xl bg-[#F4F5F7]">
+            <option disabled selected>Pick a browser</option>
+            <option>ICBC</option>
+            <option>CMB</option>
+            <option>CB</option>
+          </select>
+        </div>
+
+        <div>
+          <br />
+          <label class="text-xl text-[#080808b3] font-bold" for=""
+            >Bank Account Number</label
+          >
+          <br />
+          <input
+            type="text"
+            placeholder="Enter 11 digit account number"
+            class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+          />
+        </div>
+        <div>
+          <label class="text-xl text-[#080808b3] font-bold" for=""
+            >Amount to Add</label
+          >
+          <br />
+          <input
+            type="text"
+            placeholder="Add Amount to withdraw"
+            class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+          />
+        </div>
+        <div>
+          <label class="text-xl text-[#080808b3] font-bold" for=""
+            >Pin Number</label
+          >
+          <br />
+          <input
+            type="text"
+            placeholder="Enter 4 digit pin number"
+            class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+          />
+        </div>
+        <div>
+          <button
+            class="btn p-2 text-xl text-white font-bold bg-[#0874F2] w-full rounded-3xl"
+          >
+            Add Money
+          </button>
+        </div>
+      </div>
+    </form>
   </body>
 </html>
