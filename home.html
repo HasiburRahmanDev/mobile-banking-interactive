@@ -59,40 +59,42 @@
       <div class="card grid grid-cols-3 gap-3">
         <div
           id="add-btn"
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/wallet1.png" alt="" />
           <h1 class="text-sm">Add Money</h1>
         </div>
         <div
           id="cashout-btn"
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/send1.png" alt="" />
           <h1 class="text-sm">Cashout</h1>
         </div>
         <div
           id="transfer-btn"
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/money1.png" alt="" />
           <h1 class="text-sm">Transfer Money</h1>
         </div>
         <div
           id="btn-bonus"
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/bonus1.png" alt="" />
           <h1 class="text-sm">Get Bonus</h1>
         </div>
         <div
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          id="bill-button"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/purse1.png" alt="" />
           <h1 class="text-sm">Pay Bill</h1>
         </div>
         <div
-          class="p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
+          id="transaction-button"
+          class="form-btn p-5 border border-gray-400 flex flex-col justify-center items-center rounded-xl"
         >
           <img src="assets/transaction1.png" alt="" />
           <h1 class="text-sm">Transactions</h1>
@@ -114,7 +116,7 @@
               id="add-bank"
               class="select w-full rounded-3xl bg-[#F4F5F7]"
             >
-              <option disabled selected>Pick a browser</option>
+              <option disabled selected>Pick a Bank</option>
               <option>ICBC</option>
               <option>CMB</option>
               <option>CB</option>
@@ -312,6 +314,79 @@
           >
             Get Bonus
           </button>
+        </div>
+      </form>
+
+      <!-- Pay Bill form -->
+
+      <form
+        id="pay-bill-parent"
+        class="form max-w-lg mx-auto"
+        style="display: none"
+      >
+        <h1 class="my-4 font-bold">Add Money</h1>
+        <!-- Select A Bank -->
+        <div class="bg-white p-5 rounded-3xl">
+          <div>
+            <h1 class="mb-3 text-xl text-[#080808b3] font-bold">
+              Select To Pay
+            </h1>
+            <select
+              id="pay-bill"
+              class="select w-full rounded-3xl bg-[#F4F5F7]"
+            >
+              <option disabled selected>Pick a Biller</option>
+              <option>Electricity</option>
+              <option>Gas</option>
+              <option>Internet</option>
+            </select>
+          </div>
+
+          <div>
+            <br />
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Biller Account Number</label
+            >
+            <br />
+            <input
+              id="biller-account"
+              type="text"
+              placeholder="Enter account number"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Amount to Pay</label
+            >
+            <br />
+            <input
+              id="pay-amount"
+              type="text"
+              placeholder="Add Amount to Pay"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <label class="text-xl text-[#080808b3] font-bold" for=""
+              >Pin Number</label
+            >
+            <br />
+            <input
+              id="add-bill-pin"
+              type="text"
+              placeholder="Enter 4 digit pin number"
+              class="input bg-[#F4F5F7] rounded-3xl my-4 w-full"
+            />
+          </div>
+          <div>
+            <button
+              id="pay-bill-btn"
+              class="btn p-2 text-xl text-white font-bold bg-[#0874F2] w-full rounded-3xl"
+            >
+              Pay Now
+            </button>
+          </div>
         </div>
       </form>
     </div>

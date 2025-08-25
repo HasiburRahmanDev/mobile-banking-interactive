@@ -29,10 +29,26 @@ function displayBlock(id) {
 
 function handleToggle(id) {
   const forms = document.getElementsByClassName("form");
-  for (form of forms) {
+  for (const form of forms) {
     form.style.display = "none";
   }
   document.getElementById(id).style.display = "block";
+}
+
+// Active Button Using function
+
+function activeButton(id) {
+  const formBtns = document.getElementsByClassName("form-btn");
+  for (const formBtn of formBtns) {
+    formBtn.classList.remove("border-[#0874f2]", "bg-[#0874f20d]");
+    formBtn.classList.add("border-gray-400");
+  }
+
+  document.getElementById(id).classList.remove("border-gray-400");
+
+  document
+    .getElementById(id)
+    .classList.add("border-[#0874f2]", "bg-[#0874f20d]");
 }
 
 // add money feature
@@ -144,6 +160,36 @@ document.getElementById("bonus-btn").addEventListener("click", function (e) {
   document.getElementById("bonus-coupon").value = "";
 });
 
+// Pay Bill feature
+document.getElementById("pay-bill-btn").addEventListener("click", function (e) {
+  e.preventDefault();
+
+  const billName = document.getElementById("pay-bill").value;
+  const billerNumber = document.getElementById("biller-account").value;
+  const payAmount = getInputValueNumber("pay-amount");
+  const addbillpin = getInputValueNumber("add-bill-pin");
+  const pin = 1234;
+  const availableBalance = getInnerTextNumber("available-balance");
+
+  if (billerNumber.length < 11) {
+    alert("please provide valid account number");
+    return;
+  }
+  if (pin !== addbillpin) {
+    alert("please provide valid pin number");
+    return;
+  }
+
+  const newBalance = availableBalance - payAmount;
+
+  setInnerText(newBalance);
+
+  document.getElementById("pay-bill").value = "";
+  document.getElementById("biller-account").value = "";
+  document.getElementById("pay-amount").value = "";
+  document.getElementById("add-bill-pin").value = "";
+});
+
 // LogOut feature
 
 document.getElementById("logOut-btn").addEventListener("click", function () {
@@ -154,17 +200,33 @@ document.getElementById("logOut-btn").addEventListener("click", function () {
 
 document.getElementById("add-btn").addEventListener("click", function () {
   handleToggle("add-money-parent");
+  activeButton("add-btn");
 });
 
 document.getElementById("cashout-btn").addEventListener("click", function () {
   handleToggle("cashout-parent");
+  activeButton("cashout-btn");
 });
 
 document.getElementById("transfer-btn").addEventListener("click", function () {
   handleToggle("transfer-parent");
+  activeButton("transfer-btn");
 });
 
 document.getElementById("btn-bonus").addEventListener("click", function () {
   // document.getElementById("add-money-parent").style.display = "none";
   handleToggle("bonus-parent");
+  activeButton("btn-bonus");
+});
+
+document.getElementById("bill-button").addEventListener("click", function () {
+  // document.getElementById("add-money-parent").style.display = "none";
+  handleToggle("pay-bill-parent");
+  activeButton("bill-button");
+});
+
+document.getElementById("bill-btn").addEventListener("click", function () {
+  // document.getElementById("add-money-parent").style.display = "none";
+
+  activeButton("transaction-btn");
 });
