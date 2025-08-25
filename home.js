@@ -24,6 +24,17 @@ function displayNone(id) {
 function displayBlock(id) {
   document.getElementById(id).style.display = "block";
 }
+
+//handle toggle function
+
+function handleToggle(id) {
+  const forms = document.getElementsByClassName("form");
+  for (form of forms) {
+    form.style.display = "none";
+  }
+  document.getElementById(id).style.display = "block";
+}
+
 // add money feature
 document
   .getElementById("add-money-btn")
@@ -138,33 +149,22 @@ document.getElementById("bonus-btn").addEventListener("click", function (e) {
 document.getElementById("logOut-btn").addEventListener("click", function () {
   window.location.href = "index.html";
 });
+
 //   toggling feature
 
 document.getElementById("add-btn").addEventListener("click", function () {
-  displayNone("cashout-parent");
-  displayNone("transfer-parent");
-  displayNone("bonus-parent");
-  displayBlock("add-money-parent");
+  handleToggle("add-money-parent");
 });
 
 document.getElementById("cashout-btn").addEventListener("click", function () {
-  displayNone("add-money-parent");
-  displayNone("transfer-parent");
-  displayNone("bonus-parent");
-  displayBlock("cashout-parent");
+  handleToggle("cashout-parent");
 });
 
 document.getElementById("transfer-btn").addEventListener("click", function () {
-  displayNone("add-money-parent");
-  displayNone("cashout-parent");
-  displayNone("bonus-parent");
-  displayBlock("transfer-parent");
+  handleToggle("transfer-parent");
 });
 
 document.getElementById("btn-bonus").addEventListener("click", function () {
   // document.getElementById("add-money-parent").style.display = "none";
-  displayNone("add-money-parent");
-  displayNone("cashout-parent");
-  displayNone("transfer-parent");
-  displayBlock("bonus-parent");
+  handleToggle("bonus-parent");
 });
